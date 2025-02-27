@@ -11,7 +11,7 @@ import DemoComputer from '../components/DemoComputer.jsx';
 
 const projectCount = CplusplusProjects.length;
 
-const Projects = () => {
+const ProjectSetOne = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
   const handleNavigation = (direction) => {
@@ -31,7 +31,7 @@ const Projects = () => {
   const currentProject = CplusplusProjects[selectedProjectIndex];
 
   return (
-    <section className="c-space my-20">
+    <section className="c-space my-20" id="projects">
       <p className="head-text">My C++ Projects</p>
 
       {/*--------------------------------------------------- */}
@@ -103,4 +103,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectSetOne;

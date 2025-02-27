@@ -1,7 +1,12 @@
 import Navbar from './sections/Navbar.jsx';
 import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
-import Projects from './sections/CplusplusProjects.jsx';
+import ProjectSetOne from './sections/CplusplusProjects.jsx';
+import ProjectSetTwo from './sections/PythonProjects.jsx';
+import ProjectSetThree from './sections/UnrealProjects.jsx';
+import WorkExperience from './sections/Experience.jsx';
+import Contact from './sections/Contact.jsx';
+import Footer from './sections/Footer.jsx';
 
 const App = () => {
   return (
@@ -9,8 +14,12 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
-      <Projects/>
-
+      <ProjectSetOne/>
+      <ProjectSetTwo/>
+      <ProjectSetThree/>
+      <WorkExperience/>
+      <Contact/>
+      <Footer/>
     </main>
   );
 };

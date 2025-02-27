@@ -4,16 +4,14 @@ import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 
-import { myProjects } from '../constants/index.js';
-
-
+import { PythonProjects } from '../constants/PythonProjects.js';
 
 import CanvasLoader from '../components/Loading.jsx';
 import DemoComputer from '../components/DemoComputer.jsx';
 
-const projectCount = myProjects.length;
+const projectCount = PythonProjects.length;
 
-const Projects = () => {
+const ProjectSetTwo = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
   const handleNavigation = (direction) => {
@@ -30,15 +28,15 @@ const Projects = () => {
     gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
   }, [selectedProjectIndex]);
 
-  const currentProject = myProjects[selectedProjectIndex];
+  const currentProject = PythonProjects[selectedProjectIndex];
 
   return (
     <section className="c-space my-20">
-      <p className="head-text">My Selected Projects</p>
+      <p className="head-text">My Python Projects</p>
 
-        {/*--------------------------------------------------- */}
-       {/*-----------------Python Projects----------------------- */}
-       {/*--------------------------------------------------- */}
+      {/*--------------------------------------------------- */}
+      {/*-----------------Python Projects------------------- */}
+      {/*--------------------------------------------------- */}
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
@@ -47,7 +45,7 @@ const Projects = () => {
             <directionalLight position={[10, 10, 5]} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                <group scale={2.5} position={[-0.45, -4, 1]} rotation={[0, -0.1, 0]}>
                   <DemoComputer texture={currentProject.texture} />
                 </group>
               </Suspense>
@@ -84,7 +82,7 @@ const Projects = () => {
               href={currentProject.href}
               target="_blank"
               rel="noreferrer">
-              <p>Check Live Site</p>
+              <p>Check Github Site</p>
               <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
             </a>
           </div>
@@ -100,10 +98,8 @@ const Projects = () => {
           </div>
         </div>
       </div>
-
-
     </section>
   );
 };
 
-export default Projects;
+export default ProjectSetTwo;

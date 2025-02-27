@@ -12,6 +12,7 @@ const DemoComputer = ({ texture }) => {
   const imgTexture = useTexture(texture || '/textures/projects/Yahtzee_Raylib.png');
   imgTexture.rotation = Math.PI;
   imgTexture.center.set(0.5, 0.5);
+  imgTexture.flipY = false;
 
   useGSAP(() => {
     gsap.from(group.current.rotation, {
@@ -29,7 +30,7 @@ const DemoComputer = ({ texture }) => {
           geometry={nodes['monitor-screen'].geometry}
           material={nodes['monitor-screen'].material}
           position={[0.127, 1.831, 0.511]}
-          rotation={[1.571, 3.14, -0.031]}
+          rotation={[1.571, 3.14, -0.031]} 
           scale={[0.661, 0.608, 0.401]}>
           <meshBasicMaterial map={imgTexture} toneMapped={false} />
         </mesh>
